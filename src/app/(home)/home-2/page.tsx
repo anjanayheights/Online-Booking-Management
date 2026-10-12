@@ -35,7 +35,44 @@ import SectionDowloadApp from "../SectionDowloadApp";
 import SectionHero2 from "@/app/(server-components)/SectionHero2";
 import Image from "next/image";
 
-const DEMO_CATS_2: TaxonomyType[] = [
+const const DEMO_CATS_2: TaxonomyType[] = [
+  {
+    id: "1",
+    href: "/listing-real-estate",
+    name: "Luxury Apartments",
+    taxonomy: "category",
+    count: 1240,
+    thumbnail:
+      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "2",
+    href: "/listing-real-estate",
+    name: "Independent Houses & Villas",
+    taxonomy: "category",
+    count: 850,
+    thumbnail:
+      "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "3",
+    href: "/listing-real-estate",
+    name: "Commercial Offices",
+    taxonomy: "category",
+    count: 620,
+    thumbnail:
+      "https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "4",
+    href: "/listing-real-estate",
+    name: "Residential Plots & Land",
+    taxonomy: "category",
+    count: 430,
+    thumbnail:
+      "https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+];: TaxonomyType[] = [
   {
     id: "1",
     href: "/listing-real-estate",
@@ -167,6 +204,29 @@ function PageHome2() {
         <SectionDowloadApp />
 
         <SectionSliderNewCategories
+          categories={DEMO_CATS_2}
+          categoryCardType="card4"
+          itemPerRow={4}
+          heading="Explore Top Real Estate Destinations"
+          subHeading="Popular places and cities recommended for property investment"
+        /><SectionSliderNewCategories<SectionSliderNewCategories
+  heading="Explore by Property Types"
+  subHeading="Browse apartments, villas, plots, and commercial spaces"
+  categoryCardType="card5"
+  itemPerRow={5}
+/>
+          categories={DEMO_CATS_2}
+          categoryCardType="card4"
+          itemPerRow={4}
+          heading="Explore Top Real Estate Destinations"
+          subHeading="Popular places and cities recommended for property investment"
+        />
+          categories={DEMO_CATS_2}
+          categoryCardType="card4"
+          itemPerRow={4}
+          heading="Explore Top Real Estate Destinations"
+          subHeading="Popular places and cities recommended for property investment"
+        />
           categories={DEMO_CATS_2}
           categoryCardType="card4"
           itemPerRow={4}
