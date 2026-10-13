@@ -1,100 +1,128 @@
-import __stayListing from "./jsons/__stayListing.json";
-import __carsListing from "./jsons/__carsListing.json";
-import __experiencesListing from "./jsons/__experiencesListing.json";
-import {
-  DEMO_STAY_CATEGORIES,
-  DEMO_EXPERIENCES_CATEGORIES,
-} from "./taxonomies";
-import { CarDataType, ExperiencesDataType, StayDataType } from "./types";
-import { DEMO_AUTHORS } from "./authors";
-import car1 from "@/images/cars/1.png";
-import car2 from "@/images/cars/2.png";
-import car3 from "@/images/cars/3.png";
-import car4 from "@/images/cars/4.png";
-import car5 from "@/images/cars/5.png";
-import car6 from "@/images/cars/6.png";
-import car7 from "@/images/cars/7.png";
-import car8 from "@/images/cars/8.png";
-import car9 from "@/images/cars/9.png";
-import car10 from "@/images/cars/10.png";
-import car11 from "@/images/cars/11.png";
-import car12 from "@/images/cars/12.png";
-import car13 from "@/images/cars/13.png";
-import car14 from "@/images/cars/14.png";
-import car15 from "@/images/cars/15.png";
-import car16 from "@/images/cars/16.png";
-import { Route } from "@/routers/types";
-const carsImgs = [
-  car1,
-  car2,
-  car3,
-  car4,
-  car5,
-  car6,
-  car7,
-  car8,
-  car9,
-  car10,
-  car11,
-  car12,
-  car13,
-  car14,
-  car15,
-  car16,
+export interface Property {
+  id: string;
+  title: string;
+  location: string;
+  city: string;
+  type: 'RENT' | 'SALE';
+  category: 'NATIONAL' | 'INTERNATIONAL';
+  bhk: string;
+  price: string;
+  isVerified: boolean;
+  ownerContact: string;
+}
+
+export const POPULAR_NATIONAL_CITIES = [
+  'Noida', 'Greater Noida', 'Ghaziabad', 'Delhi NCR', 'Gurugram', 'Mumbai', 'Bengaluru', 'Pune'
 ];
 
-const DEMO_STAY_LISTINGS = __stayListing.map((post, index): StayDataType => {
-  //  ##########  GET CATEGORY BY CAT ID ######## //
-  const category = DEMO_STAY_CATEGORIES.filter(
-    (taxonomy) => taxonomy.id === post.listingCategoryId
-  )[0];
+export const POPULAR_INTL_CITIES = [
+  'Dubai (UAE)', 'London (UK)', 'Singapore', 'Toronto (Canada)', 'New York (USA)'
+];
 
-  return {
-    ...post,
-    id: `stayListing_${index}_`,
-    saleOff: !index ? "-20% today" : post.saleOff,
-    isAds: !index ? true : post.isAds,
-    author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
-    listingCategory: category,
-    href: post.href as Route,
-  };
-});
+// Helper to generate dynamic listings
+export const generateDynamicProperties = (
+  cityFilter?: string,
+  typeFilter?: string,
+  categoryFilter?: string,
+  limit: number = 12
+): Property[] => {
+  const sampleListings: Property[] = [
+    {
+      id: 'AH-8L-01',
+      title: '2 BHK Luxury Apartment',
+      location: 'Sector 62',
+      city: 'Noida',
+      type: 'RENT',
+      category: 'NATIONAL',
+      bhk: '2 BHK',
+      price: '₹22,000 / month',
+      isVerified: true,
+      ownerContact: '+91 9876543210'
+    },
+    {
+      id: 'AH-8L-02',
+      title: '3 BHK Independent Builder Floor',
+      location: 'Indirapuram',
+      city: 'Ghaziabad',
+      type: 'SALE',
+      category: 'NATIONAL',
+      bhk: '3 BHK',
+      price: '₹75 Lakhs',
+      isVerified: true,
+      ownerContact: '+91 9876543211'
+    },
+    {
+      id: 'AH-8L-03',
+      title: '3 BHK Gated Society Flat',
+      location: 'DLF Phase 5',
+      city: 'Gurugram',
+      type: 'RENT',
+      category: 'NATIONAL',
+      bhk: '3 BHK',
+      price: '₹55,000 / month',
+      isVerified: true,
+      ownerContact: '+91 9876543212'
+    },
+    {
+      id: 'AH-8L-04',
+      title: '3 BHK Premium Flat',
+      location: 'Andheri West',
+      city: 'Mumbai',
+      type: 'SALE',
+      category: 'NATIONAL',
+      bhk: '3 BHK',
+      price: '₹2.4 Crores',
+      isVerified: true,
+      ownerContact: '+91 9876543213'
+    },
+    {
+      id: 'AH-8L-05',
+      title: '2 BHK Modern Apartment',
+      location: 'Koramangala',
+      city: 'Bengaluru',
+      type: 'RENT',
+      category: 'NATIONAL',
+      bhk: '2 BHK',
+      price: '₹38,000 / month',
+      isVerified: true,
+      ownerContact: '+91 9876543214'
+    },
+    {
+      id: 'AH-4L-01',
+      title: '1 BHK Executive Suite (Burj View)',
+      location: 'Downtown',
+      city: 'Dubai (UAE)',
+      type: 'RENT',
+      category: 'INTERNATIONAL',
+      bhk: '1 BHK',
+      price: '$1,500 / month',
+      isVerified: true,
+      ownerContact: '+971 501234567'
+    },
+    {
+      id: 'AH-4L-02',
+      title: '3 BHK Luxury Condo with Terrace',
+      location: 'Mayfair',
+      city: 'London (UK)',
+      type: 'SALE',
+      category: 'INTERNATIONAL',
+      bhk: '3 BHK',
+      price: '£650,000',
+      isVerified: true,
+      ownerContact: '+44 2079460912'
+    },
+    {
+      id: 'AH-4L-03',
+      title: '3 BHK Marina Bay Penthouse',
+      location: 'Marina Bay',
+      city: 'Singapore',
+      type: 'SALE',
+      category: 'INTERNATIONAL',
+      bhk: 'Penthouse',
+      price: 'S$ 2.1 Million',
+      isVerified: true,
+      ownerContact: '+65 61234567'
+    }
+  ];
 
-const DEMO_EXPERIENCES_LISTINGS = __experiencesListing.map(
-  (post, index): ExperiencesDataType => {
-    //  ##########  GET CATEGORY BY CAT ID ######## //
-    const category = DEMO_EXPERIENCES_CATEGORIES.filter(
-      (taxonomy) => taxonomy.id === post.listingCategoryId
-    )[0];
-
-    return {
-      ...post,
-      id: `experiencesListing_${index}_`,
-      saleOff: !index ? "-20% today" : post.saleOff,
-      isAds: !index ? true : post.isAds,
-      author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
-      listingCategory: category,
-      href: post.href as Route,
-    };
-  }
-);
-
-const DEMO_CAR_LISTINGS = __carsListing.map((post, index): CarDataType => {
-  //  ##########  GET CATEGORY BY CAT ID ######## //
-  const category = DEMO_EXPERIENCES_CATEGORIES.filter(
-    (taxonomy) => taxonomy.id === post.listingCategoryId
-  )[0];
-
-  return {
-    ...post,
-    id: `carsListing_${index}_`,
-    saleOff: !index ? "-20% today" : post.saleOff,
-    isAds: !index ? true : post.isAds,
-    author: DEMO_AUTHORS.filter((user) => user.id === post.authorId)[0],
-    listingCategory: category,
-    featuredImage: carsImgs[index],
-    href: post.href as Route,
-  };
-});
-
-export { DEMO_STAY_LISTINGS, DEMO_EXPERIENCES_LISTINGS, DEMO_CAR_LISTINGS };
+  return sampleListings.filter((prop)
