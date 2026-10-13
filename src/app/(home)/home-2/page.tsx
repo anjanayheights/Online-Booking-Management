@@ -34,8 +34,7 @@ import SectionGridFeatureProperty from "../SectionGridFeatureProperty";
 import SectionDowloadApp from "../SectionDowloadApp";
 import SectionHero2 from "@/app/(server-components)/SectionHero2";
 import Image from "next/image";
-
-const const DEMO_CATS_2: TaxonomyType[] = [
+ const DEMO_CATS_2: TaxonomyType[] = [
   {
     id: "1",
     href: "/listing-real-estate",
