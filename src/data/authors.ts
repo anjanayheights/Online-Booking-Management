@@ -10,19 +10,21 @@ import avatar8 from "@/images/avatars/Image-8.png";
 import avatar9 from "@/images/avatars/Image-9.png";
 import avatar10 from "@/images/avatars/Image-10.png";
 
-export const DEMO_AUTHORS: AuthorType[] = [
-  {
-    id: "1",
-    firstName: "Rajesh",
-    lastName: "Sharma",
-    displayName: "Rajesh Sharma",
-    avatar: avatar1,
-    count: 12,
-    desc: "Verified Owner - Sector 62 Noida",
-    jobName: "Verified Owner",
-    href: "/author",
-    starRating: 4.9,
-  },
+const DEFAULT_AUTHOR: AuthorType = {
+  id: "1",
+  firstName: "Rajesh",
+  lastName: "Sharma",
+  displayName: "Rajesh Sharma",
+  avatar: avatar1,
+  count: 12,
+  desc: "Verified Owner - Sector 62 Noida",
+  jobName: "Verified Owner",
+  href: "/author",
+  starRating: 4.9,
+};
+
+const RAW_AUTHORS: AuthorType[] = [
+  DEFAULT_AUTHOR,
   {
     id: "2",
     firstName: "Priya",
@@ -132,3 +134,14 @@ export const DEMO_AUTHORS: AuthorType[] = [
     starRating: 5.0,
   },
 ];
+
+// Proxy traps any undefined array access or out-of-bound index and returns DEFAULT_AUTHOR
+export const DEMO_AUTHORS = new Proxy(RAW_AUTHORS, {
+  get(target, prop, receiver) {
+    if (typeof prop === "string" && !isNaN(Number(prop))) {
+      const idx = Number(prop);
+      return target[idx] || DEFAULT_AUTHOR;
+    }
+    return Reflect.get(target, prop, receiver);
+  },
+});
