@@ -131,4 +131,8 @@ export const DEMO_AUTHORS: AuthorType[] = [
     href: "/author",
     starRating: 5.0,
   },
-];
+].map((author) => ({
+  ...author,
+  avatar: author.avatar || avatar1,
+  href: author.href || "/author",
+}));
