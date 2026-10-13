@@ -8,7 +8,7 @@ import { DEMO_AUTHORS } from "@/data/authors";
 export interface SectionGridAuthorBoxProps {
   className?: string;
   sectionGridClass?: string;
-  boxCard?: "box1" | "box2 font-medium";
+  boxCard?: "box1" | "box2" | "box2 font-medium";
 }
 
 const DEMO_DATA = DEMO_AUTHORS.filter((_, i) => i < 10);
@@ -30,7 +30,7 @@ const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
         Top Verified Owners & Agents
       </Heading>
       <div className={`grid ${sectionGridClass}`}>
-        {DEMO_DATA.map((author, index) => (
+        {DEMO_DATA.map((author) => (
           <CardAuthorBox2 key={author.id} author={author} />
         ))}
       </div>
