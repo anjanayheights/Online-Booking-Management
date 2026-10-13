@@ -7,7 +7,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: undefined, // Static export restriction hatane ke liye
+  // In specific paths ko static export se exclude karne ke liye
+  async headers() {
+    return [];
+  },
 };
 
 module.exports = nextConfig;
