@@ -6,22 +6,18 @@ import SectionHowItWork from "@/components/SectionHowItWork";
 import BackgroundSection from "@/components/BackgroundSection";
 import { TaxonomyType } from "@/data/types";
 import SectionGridAuthorBox from "@/components/SectionGridAuthorBox";
-//
+
 import logo1 from "@/images/logos/nomal/1.png";
 import logo1Dark from "@/images/logos/dark/1.png";
-//
 import logo2 from "@/images/logos/nomal/2.png";
 import logo2Dark from "@/images/logos/dark/2.png";
-//
 import logo3 from "@/images/logos/nomal/3.png";
 import logo3Dark from "@/images/logos/dark/3.png";
-//
 import logo4 from "@/images/logos/nomal/4.png";
 import logo4Dark from "@/images/logos/dark/4.png";
-//
 import logo5 from "@/images/logos/nomal/5.png";
 import logo5Dark from "@/images/logos/dark/5.png";
-//
+
 import HIW1img from "@/images/HIW2-1.png";
 import HIW2img from "@/images/HIW2-2.png";
 import HIW3img from "@/images/HIW2-3.png";
@@ -34,7 +30,8 @@ import SectionGridFeatureProperty from "../SectionGridFeatureProperty";
 import SectionDowloadApp from "../SectionDowloadApp";
 import SectionHero2 from "@/app/(server-components)/SectionHero2";
 import Image from "next/image";
- const DEMO_CATS_2: TaxonomyType[] = [
+
+const DEMO_CATS_2: TaxonomyType[] = [
   {
     id: "1",
     href: "/listing-real-estate",
@@ -71,70 +68,6 @@ import Image from "next/image";
     thumbnail:
       "https://images.pexels.com/photos/534228/pexels-photo-534228.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-];: TaxonomyType[] = [
-  {
-    id: "1",
-    href: "/listing-real-estate",
-    name: "Enjoy the great cold",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  },
-  {
-    id: "2",
-    href: "/listing-real-estate",
-    name: "Sleep in a floating way",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "3",
-    href: "/listing-real-estate",
-    name: "In the billionaire's house",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "4",
-    href: "/listing-real-estate",
-    name: "Cool in the deep forest",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "5",
-    href: "/listing-real-estate",
-    name: "In the billionaire's house",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "6",
-    href: "/listing-real-estate",
-    name: "Sleep in a floating way",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
-  {
-    id: "7",
-    href: "/listing-real-estate",
-    name: "In the billionaire's house",
-    taxonomy: "category",
-    count: 188288,
-    thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  },
 ];
 
 function PageHome2() {
@@ -160,7 +93,6 @@ function PageHome2() {
             <Image className="block dark:hidden" src={logo3} alt="logo3" />
             <Image className="hidden dark:block" src={logo3Dark} alt="logo3" />
           </div>
-
           <div className="flex items-end justify-center">
             <Image className="block dark:hidden" src={logo5} alt="logo5" />
             <Image className="hidden dark:block" src={logo5Dark} alt="logo5" />
@@ -174,21 +106,21 @@ function PageHome2() {
               img: HIW1img,
               imgDark: HIW1imgDark,
               title: "Smart search",
-              desc: "Name the area or type of home you are looking for the search bar. Our app will find you the perfect match.",
+              desc: "Name the area or type of home you are looking for in the search bar. Our app will find you the perfect match.",
             },
             {
               id: 2,
               img: HIW2img,
               imgDark: HIW2imgDark,
               title: "Choose property",
-              desc: "From the number of options our app will provide, you can select any property that you like to explore.",
+              desc: "From the options provided, select any property you like to explore.",
             },
             {
               id: 3,
               img: HIW3img,
               imgDark: HIW3imgDark,
-              title: "Book you property",
-              desc: "Find a home or space from our search bar. Enter your specific location, property type and price range.",
+              title: "Book your property",
+              desc: "Enter your specific location, property type and price range to finalize.",
             },
           ]}
         />
@@ -208,29 +140,6 @@ function PageHome2() {
           itemPerRow={4}
           heading="Explore Top Real Estate Destinations"
           subHeading="Popular places and cities recommended for property investment"
-        /><SectionSliderNewCategories<SectionSliderNewCategories
-  heading="Explore by Property Types"
-  subHeading="Browse apartments, villas, plots, and commercial spaces"
-  categoryCardType="card5"
-  itemPerRow={5}
-/>
-          categories={DEMO_CATS_2}
-          categoryCardType="card4"
-          itemPerRow={4}
-          heading="Explore Top Real Estate Destinations"
-          subHeading="Popular places and cities recommended for property investment"
-        />
-          categories={DEMO_CATS_2}
-          categoryCardType="card4"
-          itemPerRow={4}
-          heading="Explore Top Real Estate Destinations"
-          subHeading="Popular places and cities recommended for property investment"
-        />
-          categories={DEMO_CATS_2}
-          categoryCardType="card4"
-          itemPerRow={4}
-          heading="Suggestions for discovery"
-          subHeading="Popular places to stay that Chisfis recommends for you"
         />
 
         <div className="relative py-16">
@@ -239,8 +148,8 @@ function PageHome2() {
         </div>
 
         <SectionSliderNewCategories
-          heading="Explore by types of stays"
-          subHeading="Explore houses based on 10 types of stays"
+          heading="Explore by Property Types"
+          subHeading="Browse apartments, villas, plots, and commercial spaces"
           categoryCardType="card5"
           itemPerRow={5}
         />
