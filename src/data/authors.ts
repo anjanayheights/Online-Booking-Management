@@ -20,7 +20,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 12,
     desc: "Verified Owner - Sector 62 Noida",
     jobName: "Verified Owner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.9,
   },
   {
@@ -32,7 +32,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 24,
     desc: "Property Consultant - Gurgaon",
     jobName: "Property Consultant",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.8,
   },
   {
@@ -44,7 +44,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 18,
     desc: "Verified Owner - Bandra West Mumbai",
     jobName: "Verified Owner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 5.0,
   },
   {
@@ -56,7 +56,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 15,
     desc: "Builder Partner - Bangalore",
     jobName: "Builder Partner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.7,
   },
   {
@@ -68,7 +68,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 9,
     desc: "Verified Owner - Indirapuram Ghaziabad",
     jobName: "Verified Owner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.9,
   },
   {
@@ -80,7 +80,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 31,
     desc: "Commercial Agent - Connaught Place Delhi",
     jobName: "Commercial Agent",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.9,
   },
   {
@@ -92,7 +92,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 102,
     desc: "Verified Owner - Pune Central",
     jobName: "Verified Owner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.8,
   },
   {
@@ -104,7 +104,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 35,
     desc: "Rental Specialist - Whitefield Bangalore",
     jobName: "Rental Specialist",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.9,
   },
   {
@@ -116,7 +116,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 21,
     desc: "Verified Owner - Greater Noida West",
     jobName: "Verified Owner",
-    href: "/author" as any,
+    href: "/author",
     starRating: 4.7,
   },
   {
@@ -128,7 +128,7 @@ export const DEMO_AUTHORS: AuthorType[] = [
     count: 111,
     desc: "Global Property Agent - Dubai & UK Properties",
     jobName: "Global Agent",
-    href: "/author" as any,
+    href: "/author",
     starRating: 5.0,
   },
 ];
