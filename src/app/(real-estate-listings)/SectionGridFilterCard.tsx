@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC, useState } from "react";
-import Heading2 from "@/components/Heading2";
+import Heading2 from "@/shared/Heading2";
 import PropertyCardH from "@/components/PropertyCardH";
 import { DEMO_STAY_LISTINGS } from "@/data/listings";
 import { StayDataType } from "@/data/types";
