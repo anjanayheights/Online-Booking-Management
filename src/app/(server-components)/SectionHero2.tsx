@@ -10,7 +10,7 @@ export interface SectionHero2Props {
 const SectionHero2: FC<SectionHero2Props> = ({ className = "" }) => {
   return (
     <div
-      className={`nc-SectionHero2 relative flex flex-col-reverse lg:flex-col relative ${className}`}
+      className={`nc-SectionHero2 relative flex flex-col-reverse lg:flex-col ${className}`}
     >
       <div className="relative py-8 lg:py-20 lg:pr-14 flex flex-col items-start justify-center max-w-3xl space-y-8">
         <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 dark:bg-primary-900 dark:bg-opacity-30 dark:text-primary-300">
@@ -67,4 +67,4 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "" }) => {
   );
 };
 
-exportFooterexport default SectionHero2; // Wait, simple export: export default SectionHero2;
+export default SectionHero2;
