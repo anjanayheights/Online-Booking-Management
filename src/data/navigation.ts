@@ -1,5 +1,4 @@
 import { NavItemType } from "@/shared/Navigation/NavigationItem";
-import nDarkItem from "./navigation";
 
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
@@ -28,3 +27,5 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     name: "Agents / Owners",
   },
 ];
+
+export const NAVIGATION_DEMO_2 = NAVIGATION_DEMO;
