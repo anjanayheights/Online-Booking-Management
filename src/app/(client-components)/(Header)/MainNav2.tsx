@@ -1,14 +1,8 @@
+"use client";
+
 import React, { FC } from "react";
 import Logo from "@/shared/Logo";
-import MenuBar from "@/shared/MenuBar";
-import LangDropdown from "./LangDropdown";
-import NotifyDropdown from "./NotifyDropdown";
-import AvatarDropdown from "./AvatarDropdown";
-import DropdownTravelers from "./DropdownTravelers";
-import HeroSearchForm2MobileFactory from "../(HeroSearchForm2Mobile)/HeroSearchForm2MobileFactory";
 import Link from "next/link";
-import TemplatesDropdown from "./TemplatesDropdown";
-import { Route } from "@/routers/types";
 
 export interface MainNav2Props {
   className?: string;
@@ -16,39 +10,25 @@ export interface MainNav2Props {
 
 const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
   return (
-    <div className={`MainNav2 relative z-10 ${className}`}>
-      <div className="px-4 h-20 lg:container flex justify-between">
-        <div className="hidden md:flex justify-start flex-1 space-x-3 sm:space-x-8 lg:space-x-10">
-          <Logo className="w-24 self-center" />
-          <div className="hidden lg:block self-center h-10 border-l border-neutral-300 dark:border-neutral-500"></div>
-          <div className="hidden lg:flex ">
-            <DropdownTravelers />
-          </div>
+    <div className={`nc-MainNav2 relative z-10 ${className}`}>
+      <div className="px-4 lg:px-14 py-4 flex justify-between items-center bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+        <div className="flex items-center space-x-8">
+          <Logo />
+          <nav className="hidden md:flex space-x-6 text-sm font-semibold">
+            <Link href="/" className="hover:text-red-600">Home</Link>
+            <Link href="/listing-real-estate" className="hover:text-red-600">Buy (8 Lakh+ Properties)</Link>
+            <Link href="/listing-real-estate" className="hover:text-red-600">Rent (Zero Brokerage)</Link>
+            <Link href="/listing-real-estate" className="hover:text-red-600">International (4 Lakh+ Western)</Link>
+          </nav>
         </div>
 
-        <div className="self-center lg:hidden flex-[3] max-w-lg !mx-auto md:px-3">
-          <HeroSearchForm2MobileFactory />
-        </div>
-
-        <div className="hidden md:flex flex-shrink-0 justify-end flex-1 lg:flex-none text-neutral-700 dark:text-neutral-100">
-          <div className="hidden lg:flex space-x-1">
-            <TemplatesDropdown />
-            <LangDropdown />
-            <Link
-              href={"/add-listing" as Route<string>}
-              className="self-center text-opacity-90 group px-4 py-2 border border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 rounded-full inline-flex items-center text-sm text-gray-700 dark:text-neutral-300 font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-            >
-              List your property
-            </Link>
-
-            <NotifyDropdown />
-            <AvatarDropdown />
-          </div>
-          <div className="flex space-x-2 lg:hidden">
-            <NotifyDropdown />
-            <AvatarDropdown />
-            <MenuBar />
-          </div>
+        <div className="flex items-center space-x-3">
+          <Link
+            href="/author"
+            className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-full shadow-md transition-all"
+          >
+            Post Free Ad
+          </Link>
         </div>
       </div>
     </div>
