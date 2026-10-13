@@ -1,31 +1,45 @@
-import React, { FC } from "react";
-import MainNav1 from "./MainNav1";
-import MainNav2 from "./MainNav2";
+'use client';
 
-export interface HeaderProps {
-  navType?: "MainNav1" | "MainNav2";
-  className?: string;
+import React, { useState } from 'react';
+
+interface HeaderProps {
+  onOpenPlansModal: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ navType = "MainNav1", className = "" }) => {
-  const renderNav = () => {
-    switch (navType) {
-      case "MainNav1":
-        return <MainNav1 />;
-      case "MainNav2":
-        return <MainNav2 />;
-      default:
-        return <MainNav1 />;
-    }
-  };
-
+export default function Header({ onOpenPlansModal }: HeaderProps) {
   return (
-    <div
-      className={`nc-Header sticky top-0 w-full left-0 right-0 z-40 nc-header-bg ${className}`}
-    >
-      {renderNav()}
-    </div>
-  );
-};
+    <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Brand Logo */}
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-black text-blue-700 tracking-tight">Anjanay Heights</span>
+          <span className="bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded-full">
+            Verified
+          </span>
+        </div>
 
-export default Header;
+        {/* Navigation Section */}
+        <nav className="flex items-center gap-6">
+          <a href="#properties" className="text-gray-700 hover:text-blue-600 font-semibold text-sm">
+            Properties
+          </a>
+          <a href="#owner" className="text-gray-700 hover:text-blue-600 font-semibold text-sm">
+            Owner Corner
+          </a>
+          
+          {/* Header Mein Plans Ka New Section / Button */}
+          <button
+            onClick={onOpenPlansModal}
+            className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-4 py-2 rounded-lg text-sm transition shadow-sm flex items-center gap-1"
+          >
+            ⭐ Owner Plans & Passes
+          </button>
+
+          <a href="#contact" className="text-gray-700 hover:text-blue-600 font-semibold text-sm">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
