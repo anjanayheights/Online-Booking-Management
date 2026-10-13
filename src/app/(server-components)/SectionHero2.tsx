@@ -14,34 +14,36 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "" }) => {
     >
       <div className="relative py-8 lg:py-20 lg:pr-14 flex flex-col items-start justify-center max-w-3xl space-y-8">
         <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 dark:bg-primary-900 dark:bg-opacity-30 dark:text-primary-300">
-          ✨ Verified Properties & Trusted Builders
+          🇮🇳 India’s Trusted Real Estate Marketplace
         </span>
         <h2 className="font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl !leading-[1.12] tracking-tight">
-          Find Your Dream Home & Smart Investments
+          Find Verified Flats, Villas & Plots in India
         </h2>
         <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400">
-          Discover verified apartments, luxury villas, commercial spaces, and residential plots tailored to your needs.
+          Explore residential and commercial properties across top Indian cities with zero brokerage options and direct builder listings.
         </p>
 
-        {/* Quick Search Action Bar */}
+        {/* Indian Quick Search Bar */}
         <div className="w-full bg-white dark:bg-neutral-900 shadow-xl rounded-2xl p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border border-neutral-100 dark:border-neutral-800">
           <div className="flex flex-col space-y-1">
-            <label className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Location</label>
+            <label className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">City / Locality</label>
             <input 
               type="text" 
-              placeholder="City, Locality or Landmark" 
+              placeholder="e.g. Noida, Mumbai, Bangalore" 
               className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
           <div className="flex flex-col space-y-1">
-            <label className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Property Type</label>
+            <label className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">Configuration</label>
             <select className="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500">
-              <option>All Apartments & Villas</option>
-              <option>Luxury Apartments</option>
-              <option>Independent House</option>
-              <option>Commercial Office</option>
-              <option>Residential Plot</option>
+              <option>Any BHK / Type</option>
+              <option>1 BHK Apartment</option>
+              <option>2 BHK Apartment</option>
+              <option>3 BHK Apartment</option>
+              <option>4+ BHK Luxury Villa</option>
+              <option>Commercial Office Space</option>
+              <option>Residential Plot / Land</option>
             </select>
           </div>
 
@@ -57,7 +59,7 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "" }) => {
         <Image
           className="w-full h-auto object-contain max-h-[550px]"
           src={imageRight}
-          alt="Real Estate Hero"
+          alt="Indian Real Estate Hero"
           priority
         />
       </div>
@@ -65,4 +67,4 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "" }) => {
   );
 };
 
-export default SectionHero2;
+exportFooterexport default SectionHero2; // Wait, simple export: export default SectionHero2;
