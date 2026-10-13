@@ -1,4 +1,3 @@
-import __authors from "./jsons/__users.json";
 import { AuthorType } from "./types";
 import avatar1 from "@/images/avatars/Image-1.png";
 import avatar2 from "@/images/avatars/Image-2.png";
@@ -10,45 +9,126 @@ import avatar7 from "@/images/avatars/Image-7.png";
 import avatar8 from "@/images/avatars/Image-8.png";
 import avatar9 from "@/images/avatars/Image-9.png";
 import avatar10 from "@/images/avatars/Image-10.png";
-import avatar11 from "@/images/avatars/Image-11.png";
-import avatar12 from "@/images/avatars/Image-12.png";
-import avatar13 from "@/images/avatars/Image-13.png";
-import avatar14 from "@/images/avatars/Image-14.png";
-import avatar15 from "@/images/avatars/Image-15.png";
-import avatar16 from "@/images/avatars/Image-16.png";
-import avatar17 from "@/images/avatars/Image-17.png";
-import avatar18 from "@/images/avatars/Image-18.png";
-import avatar19 from "@/images/avatars/Image-19.png";
-import avatar20 from "@/images/avatars/Image-20.png";
-import { Route } from "@/routers/types";
 
-const imgs = [
-  avatar1,
-  avatar2,
-  avatar3,
-  avatar4,
-  avatar5,
-  avatar6,
-  avatar7,
-  avatar8,
-  avatar9,
-  avatar10,
-  avatar11,
-  avatar12,
-  avatar13,
-  avatar14,
-  avatar15,
-  avatar16,
-  avatar17,
-  avatar18,
-  avatar19,
-  avatar20,
+export const DEMO_AUTHORS: AuthorType[] = [
+  {
+    id: "1",
+    firstName: "Rajesh",
+    lastName: "Sharma",
+    displayName: "Rajesh Sharma",
+    avatar: avatar1,
+    count: 12,
+    desc: "Verified Owner - Sector 62 Noida",
+    jobName: "Verified Owner",
+    href: "/author",
+    starRating: 4.9,
+  },
+  {
+    id: "2",
+    firstName: "Priya",
+    lastName: "Verma",
+    displayName: "Priya Verma",
+    avatar: avatar2,
+    count: 24,
+    desc: "Property Consultant - Gurgaon",
+    jobName: "Property Consultant",
+    href: "/author",
+    starRating: 4.8,
+  },
+  {
+    id: "3",
+    firstName: "Amit",
+    lastName: "Patel",
+    displayName: "Amit Patel",
+    avatar: avatar3,
+    count: 18,
+    desc: "Verified Owner - Bandra West Mumbai",
+    jobName: "Verified Owner",
+    href: "/author",
+    starRating: 5.0,
+  },
+  {
+    id: "4",
+    firstName: "Suresh",
+    lastName: "Reddy",
+    displayName: "Suresh Reddy",
+    avatar: avatar4,
+    count: 15,
+    desc: "Builder Partner - Bangalore",
+    jobName: "Builder Partner",
+    href: "/author",
+    starRating: 4.7,
+  },
+  {
+    id: "5",
+    firstName: "Neha",
+    lastName: "Gupta",
+    displayName: "Neha Gupta",
+    avatar: avatar5,
+    count: 9,
+    desc: "Verified Owner - Indirapuram Ghaziabad",
+    jobName: "Verified Owner",
+    href: "/author",
+    starRating: 4.9,
+  },
+  {
+    id: "6",
+    firstName: "Vikas",
+    lastName: "Malhotra",
+    displayName: "Vikas Malhotra",
+    avatar: avatar6,
+    count: 31,
+    desc: "Commercial Agent - Connaught Place Delhi",
+    jobName: "Commercial Agent",
+    href: "/author",
+    starRating: 4.9,
+  },
+  {
+    id: "7",
+    firstName: "Rohan",
+    lastName: "Mehta",
+    displayName: "Rohan Mehta",
+    avatar: avatar7,
+    count: 102,
+    desc: "Verified Owner - Pune Central",
+    jobName: "Verified Owner",
+    href: "/author",
+    starRating: 4.8,
+  },
+  {
+    id: "8",
+    firstName: "Ananya",
+    lastName: "Rao",
+    displayName: "Ananya Rao",
+    avatar: avatar8,
+    count: 35,
+    desc: "Rental Specialist - Whitefield Bangalore",
+    jobName: "Rental Specialist",
+    href: "/author",
+    starRating: 4.9,
+  },
+  {
+    id: "9",
+    firstName: "Karan",
+    lastName: "Singh",
+    displayName: "Karan Singh",
+    avatar: avatar9,
+    count: 21,
+    desc: "Verified Owner - Greater Noida West",
+    jobName: "Verified Owner",
+    href: "/author",
+    starRating: 4.7,
+  },
+  {
+    id: "10",
+    firstName: "Sanjay",
+    lastName: "Joshi",
+    displayName: "Sanjay Joshi",
+    avatar: avatar10,
+    count: 111,
+    desc: "Global Property Agent - Dubai & UK Properties",
+    jobName: "Global Agent",
+    href: "/author",
+    starRating: 5.0,
+  },
 ];
-
-const DEMO_AUTHORS: AuthorType[] = __authors.map((item, index) => ({
-  ...item,
-  avatar: imgs[index] || item.avatar,
-  href: item.href as Route,
-}));
-
-export { DEMO_AUTHORS };
