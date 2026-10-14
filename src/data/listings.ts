@@ -1,128 +1,81 @@
-export interface Property {
+export interface PropertyListing {
   id: string;
   title: string;
-  location: string;
-  city: string;
-  type: 'RENT' | 'SALE';
-  category: 'NATIONAL' | 'INTERNATIONAL';
-  bhk: string;
   price: string;
-  isVerified: boolean;
-  ownerContact: string;
+  location: string;
+  type: string;
+  bhk: string;
+  carpetArea: string;
+  deposit: string;
+  furnishing: string;
+  preferredTenant: string;
+  viewsCount: number;
+  imageUrl: string;
 }
 
-export const POPULAR_NATIONAL_CITIES = [
-  'Noida', 'Greater Noida', 'Ghaziabad', 'Delhi NCR', 'Gurugram', 'Mumbai', 'Bengaluru', 'Pune'
+export const sampleListings: PropertyListing[] = [
+  {
+    id: 'prop-1',
+    title: '2 BHK Luxury Apartment in Sector 62, Noida',
+    price: '₹22,000 / month',
+    location: 'Sector 62, Noida',
+    type: 'Rent',
+    bhk: '2 BHK',
+    carpetArea: '850 sqft',
+    deposit: '₹44,000',
+    furnishing: 'Semi Furnished',
+    preferredTenant: 'Anyone',
+    viewsCount: 12,
+    imageUrl: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'prop-2',
+    title: '3 BHK Independent Builder Floor in Indirapuram',
+    price: '₹75 Lakhs',
+    location: 'Indirapuram, Ghaziabad',
+    type: 'Sale',
+    bhk: '3 BHK',
+    carpetArea: '1350 sqft',
+    deposit: 'Nil',
+    furnishing: 'Semi Furnished',
+    preferredTenant: 'Family Only',
+    viewsCount: 18,
+    imageUrl: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'prop-3',
+    title: '1 BHK Semi-Furnished Studio in Vaishali',
+    price: '₹12,500 / month',
+    location: 'Vaishali, Ghaziabad',
+    type: 'Rent',
+    bhk: '1 BHK',
+    carpetArea: '520 sqft',
+    deposit: '₹25,000',
+    furnishing: 'Semi Furnished',
+    preferredTenant: 'Bachelors',
+    viewsCount: 8,
+    imageUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'prop-4',
+    title: '3 BHK Gated Society Flat in DLF Phase 5',
+    price: '₹55,000 / month',
+    location: 'DLF Phase 5, Gurugram',
+    type: 'Rent',
+    bhk: '3 BHK',
+    carpetArea: '1600 sqft',
+    deposit: '₹1,10,000',
+    furnishing: 'Fully Furnished',
+    preferredTenant: 'Family Only',
+    viewsCount: 25,
+    imageUrl: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80'
+  }
 ];
 
-export const POPULAR_INTL_CITIES = [
-  'Dubai (UAE)', 'London (UK)', 'Singapore', 'Toronto (Canada)', 'New York (USA)'
-];
-
-// Helper to generate dynamic listings
-export const generateDynamicProperties = (
-  cityFilter?: string,
-  typeFilter?: string,
-  categoryFilter?: string,
-  limit: number = 12
-): Property[] => {
-  const sampleListings: Property[] = [
-    {
-      id: 'AH-8L-01',
-      title: '2 BHK Luxury Apartment',
-      location: 'Sector 62',
-      city: 'Noida',
-      type: 'RENT',
-      category: 'NATIONAL',
-      bhk: '2 BHK',
-      price: '₹22,000 / month',
-      isVerified: true,
-      ownerContact: '+91 9876543210'
-    },
-    {
-      id: 'AH-8L-02',
-      title: '3 BHK Independent Builder Floor',
-      location: 'Indirapuram',
-      city: 'Ghaziabad',
-      type: 'SALE',
-      category: 'NATIONAL',
-      bhk: '3 BHK',
-      price: '₹75 Lakhs',
-      isVerified: true,
-      ownerContact: '+91 9876543211'
-    },
-    {
-      id: 'AH-8L-03',
-      title: '3 BHK Gated Society Flat',
-      location: 'DLF Phase 5',
-      city: 'Gurugram',
-      type: 'RENT',
-      category: 'NATIONAL',
-      bhk: '3 BHK',
-      price: '₹55,000 / month',
-      isVerified: true,
-      ownerContact: '+91 9876543212'
-    },
-    {
-      id: 'AH-8L-04',
-      title: '3 BHK Premium Flat',
-      location: 'Andheri West',
-      city: 'Mumbai',
-      type: 'SALE',
-      category: 'NATIONAL',
-      bhk: '3 BHK',
-      price: '₹2.4 Crores',
-      isVerified: true,
-      ownerContact: '+91 9876543213'
-    },
-    {
-      id: 'AH-8L-05',
-      title: '2 BHK Modern Apartment',
-      location: 'Koramangala',
-      city: 'Bengaluru',
-      type: 'RENT',
-      category: 'NATIONAL',
-      bhk: '2 BHK',
-      price: '₹38,000 / month',
-      isVerified: true,
-      ownerContact: '+91 9876543214'
-    },
-    {
-      id: 'AH-4L-01',
-      title: '1 BHK Executive Suite (Burj View)',
-      location: 'Downtown',
-      city: 'Dubai (UAE)',
-      type: 'RENT',
-      category: 'INTERNATIONAL',
-      bhk: '1 BHK',
-      price: '$1,500 / month',
-      isVerified: true,
-      ownerContact: '+971 501234567'
-    },
-    {
-      id: 'AH-4L-02',
-      title: '3 BHK Luxury Condo with Terrace',
-      location: 'Mayfair',
-      city: 'London (UK)',
-      type: 'SALE',
-      category: 'INTERNATIONAL',
-      bhk: '3 BHK',
-      price: '£650,000',
-      isVerified: true,
-      ownerContact: '+44 2079460912'
-    },
-    {
-      id: 'AH-4L-03',
-      title: '3 BHK Marina Bay Penthouse',
-      location: 'Marina Bay',
-      city: 'Singapore',
-      type: 'SALE',
-      category: 'INTERNATIONAL',
-      bhk: 'Penthouse',
-      price: 'S$ 2.1 Million',
-      isVerified: true,
-      ownerContact: '+65 61234567'
-    }
-  ];
-
-  return sampleListings.filter((prop)
+export function getFilteredListings(query: string = ''): PropertyListing[] {
+  return sampleListings.filter((prop) => {
+    if (!query) return true;
+    return prop.title.toLowerCase().includes(query.toLowerCase()) || 
+           prop.location.toLowerCase().includes(query.toLowerCase());
+  });
+}
